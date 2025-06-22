@@ -1,0 +1,12 @@
+TODO Last ned alle audiofiler
+
+TODO Optimaliser prosessen
+- Bruke GPU?
+- batch? (paralell) 
+batch_size=8
+
+- half-precision?
+
+
+
+- stride length?

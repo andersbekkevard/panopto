@@ -1,0 +1,23 @@
+# Audio processing and transcription dependencies
+transformers==4.36.2
+torch>=2.0.0
+torchaudio>=2.0.0
+
+# OpenAI API for Whisper transcription
+openai==1.6.1
+
+# Audio processing and format conversion
+librosa>=0.10.0
+soundfile>=0.12.0
+
+# Norwegian Whisper model dependencies
+datasets>=2.14.0
+accelerate>=0.24.0
+
+# Optional: Jupyter notebook support (for misc/experimental.ipynb)
+jupyter>=1.0.0
+ipykernel>=6.25.0
+
+
+# Note: yt-dlp should be installed separately via pip or package manager
+# pip install yt-dlp 
