@@ -1,10 +1,8 @@
 from transformers import pipeline
 
-IN_PATH = (
-    "C:\\Users\\Anders\\forelesninger\\styring\\audio\\TIØ4105 - 17.03.2025 - Økt 2.mp3"
-)
+IN_PATH = 
 lecture_name = IN_PATH.split("\\")[-1]
-OUT_PATH = "C:\\Users\\Anders\\forelesninger\\styring\\text\\" + lecture_name
+OUT_PATH = "test: " + lecture_name + ".txt"
 
 # Load the NB-Whisper Large model
 print(f"Loading NB-Whisper Small model...")
