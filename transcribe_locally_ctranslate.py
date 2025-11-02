@@ -1,6 +1,4 @@
 """
-Fastest possible local transcription using optimized techniques.
-
 Key optimizations:
 - faster-whisper (CTranslate2 backend) - 2-4x faster than transformers
 - VAD filtering to skip silence
@@ -59,7 +57,9 @@ LOG_PROB_THRESHOLD = -1.0  # Skip low-confidence chunks
 
 def get_audio_files(audio_folder: Path) -> List[Path]:
     """Get all audio files from the specified folder."""
-    audio_extensions = {".mp3", ".mp4", ".mpeg", ".mpga", ".m4a", ".wav", ".webm"}
+    audio_extensions = {".mp3", ".mpeg", ".mpga", ".m4a", ".wav", ".webm"}
+    # Exclude .part (incomplete downloads) and .mp4 (video files)
+    exclude_extensions = {".part", ".mp4"}
     audio_files = []
 
     if not audio_folder.exists():
@@ -67,7 +67,11 @@ def get_audio_files(audio_folder: Path) -> List[Path]:
         return []
 
     for file_path in audio_folder.iterdir():
-        if file_path.is_file() and file_path.suffix.lower() in audio_extensions:
+        suffix = file_path.suffix.lower()
+        # Skip if it's an excluded extension or not an audio file
+        if suffix in exclude_extensions:
+            continue
+        if file_path.is_file() and suffix in audio_extensions:
             audio_files.append(file_path)
 
     return sorted(audio_files)
