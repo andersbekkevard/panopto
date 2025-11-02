@@ -3,8 +3,14 @@ transformers==4.36.2
 torch>=2.0.0
 torchaudio>=2.0.0
 
+# Faster Whisper using CTranslate2 (2-4x faster than transformers)
+faster-whisper>=1.0.0
+
+# MLX Whisper for Apple Silicon (Metal GPU acceleration)
+mlx-whisper>=0.1.0
+
 # OpenAI API for Whisper transcription
-openai==1.6.1
+openai
 
 # Audio processing and format conversion
 librosa>=0.10.0
@@ -18,6 +24,8 @@ accelerate>=0.24.0
 jupyter>=1.0.0
 ipykernel>=6.25.0
 
+# Video/audio download tool
+yt-dlp>=2024.0.0
 
-# Note: yt-dlp should be installed separately via pip or package manager
-# pip install yt-dlp 
+# Progress bar for downloads
+tqdm>=4.65.0
